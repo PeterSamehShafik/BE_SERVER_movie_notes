@@ -26,8 +26,8 @@ export const appRouter = (app) => {
     const baseURL = process.env.BASEURL
 
     //API Routing
-    app.use(`/auth`, authRouter)
-    app.use(`/note`, noteRouter)
+    app.use(`${baseURL}/auth`, authRouter)
+    app.use(`${baseURL}/note`, noteRouter)
 
     //In-valid routing handling
     app.use('*', (req, res, next) => {
