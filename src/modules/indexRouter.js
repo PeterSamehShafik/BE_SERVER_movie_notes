@@ -20,7 +20,7 @@ export const appRouter = (app) => {
 
     //Convert buffer data
     app.use(express.json())
-    app.use(express.urlencoded({extended:false}))
+    app.use(express.urlencoded({ extended: false }))
 
     //baseURL
     const baseURL = process.env.BASEURL

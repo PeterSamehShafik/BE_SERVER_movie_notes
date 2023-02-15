@@ -59,7 +59,7 @@ export const confirmEmail = asyncHandler(async (req, res, next) => {
 
 export const signIn = asyncHandler(async (req, res, next) => {
     const { email, password } = req.body
-    const user = await findOne({ model: userModel, filter: { email } })
+    const user = await findOne({ model: userModel, filter: { email: email.toLowerCase() } })
     if (user) {
         const match = bcrypt.compareSync(password, user.password)
         if (match) {
